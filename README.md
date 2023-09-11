@@ -1,2 +1,1 @@
-Şemalar 
-# E-Commerce
+# Şemalar 
