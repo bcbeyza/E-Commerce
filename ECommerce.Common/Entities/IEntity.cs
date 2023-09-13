@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerce.Entities
+namespace ECommerce.Common.Entities
 {
-    internal class Class1
+    public interface IEntity
     {
     }
 }

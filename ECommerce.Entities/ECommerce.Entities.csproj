@@ -10,4 +10,12 @@
     <ProjectReference Include="..\ECommerce.Common\ECommerce.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstract\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+  </ItemGroup>
+
 </Project>
