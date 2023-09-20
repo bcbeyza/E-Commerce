@@ -24,6 +24,16 @@ namespace ECommerce.API.Controllers
             }
             return BadRequest(result);
         }
+        [HttpPost("updateaddress")]
+        public IActionResult UpdateAddress(Customer customer,string newAddress)
+        {
+            var result = _customerService.UpdateAddress(customer, newAddress);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
         [HttpDelete("RemoveCustomer")]
 

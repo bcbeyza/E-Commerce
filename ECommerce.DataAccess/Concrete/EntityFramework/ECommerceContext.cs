@@ -16,5 +16,15 @@ namespace ECommerce.DataAccess.Concrete.EntityFramework
         }
         public DbSet<Product> Product { get; set; }
         public DbSet<Customer> Customer { get; set; }
+        public DbSet<CreditCard> CreditCard { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<CreditCard>()
+                .HasKey(c => c.CardID);
+
+
+        }
     }
 }

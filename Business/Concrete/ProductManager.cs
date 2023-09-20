@@ -1,4 +1,6 @@
 ﻿using ECommerce.Business.Abstract;
+using ECommerce.Business.Constants;
+using ECommerce.Common.Utilities.Results;
 using ECommerce.DataAccess.Abstract;
 using ECommerce.Entities.Concrete;
 using System;
@@ -16,9 +18,37 @@ namespace ECommerce.Business.Concrete
         {
             _productDal = productDal;
         }
-        public List<Product> GetAllByCategoryId(int id)
+        public IResult AddProduct(Product product)
         {
-            return _productDal.GetAll(p => p.CategoryID == id);
+            _productDal.Add(product);
+             return new SuccessResult(Messages.AddProduct);
+
+        }
+        public IResult DeleteProduct(Product product)
+        {
+            _productDal.Delete(product);
+            return new SuccessResult(Messages.DeleteProduct);
+
+        }
+        public IResult UpdateProduct(Product product)
+        {
+            _productDal.Update(product);
+            return new SuccessResult(Messages.UpdateProduct);
+
+        }
+        public IDataResult<List<Product>> GetAll()
+        {
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductsListed);
+        }
+        public IDataResult<List<Product>> GetAllByCategoryId(int id)
+        {
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryID == id));
+        }
+
+        public IDataResult<Product> GetById(int productId)
+        {
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductID == productId));
+
         }
     }
 }

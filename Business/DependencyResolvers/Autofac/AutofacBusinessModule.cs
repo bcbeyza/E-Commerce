@@ -18,6 +18,8 @@ namespace ECommerce.Business.DependencyResolvers.Autofac
             builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance();
             builder.RegisterType<CustomerManager>().As<ICustomerService>().SingleInstance();
             builder.RegisterType<EfCustomerDal>().As<ICustomerDal>().SingleInstance();
+            builder.RegisterType<CreditCardManager>().As<ICreditCardService>().SingleInstance();
+            builder.RegisterType<EfCreditCardDal>().As<ICreditCardDal>().SingleInstance();
 
 
         }

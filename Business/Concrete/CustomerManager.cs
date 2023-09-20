@@ -27,6 +27,19 @@ namespace ECommerce.Business.Concrete
             return new SuccessResult(Messages.CustomerAdded);
         }
 
+        public IResult UpdateAddress(Customer customer, string newAddress)
+        {
+            if (string.IsNullOrWhiteSpace(newAddress))
+            {
+                return new ErrorResult(Messages.InvalidAddress);
+            }
+
+            customer.Address = newAddress;
+            _customerDal.Update(customer); // Müşteri nesnesinin adres alanını güncelleyin.
+
+            return new SuccessResult(Messages.AddressAdded);
+        }
+
         public Customer GetByEmail(string email)
         {
             return _customerDal.Get(c => c.Email == email);
@@ -57,5 +70,7 @@ namespace ECommerce.Business.Concrete
             return new SuccessResult(Messages.RemoveCustomer);
 
         }
+
+        
     }
 }

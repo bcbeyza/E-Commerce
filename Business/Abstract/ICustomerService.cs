@@ -12,6 +12,7 @@ namespace ECommerce.Business.Abstract
     public interface ICustomerService
     {
         IResult Add(Customer customer);
+        IResult UpdateAddress(Customer customer, string newAddress);
         IResult RemoveCustomer(Customer customer);
 
         Customer GetByEmail(string email);

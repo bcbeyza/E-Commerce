@@ -13,5 +13,17 @@ namespace ECommerce.Business.Constants
         public static string RemoveCustomer = "Kullanıcı silindi.";
         internal static string LoginSuccesful = "Giris basarili.";
         internal static string LoginError = "Giris basarisiz.";
+
+        public static string InvalidAddress = "Geçerli bir adres girin.";
+        public static string AddressAdded = "Adres eklendi.";
+
+        public static string ProductsListed = "ürünler listelendi.";
+        public static string AddProduct = "ürün eklendi.";
+        public static string DeleteProduct = "ürün silindi.";
+        public static string UpdateProduct = "ürün güncellendi.";
+
+        public static string CardUpdate = "kart güncellendi.";
+        public static string CardDelete = "kart silindi.";
+        public static string CardAdded = "karat eklendi.";
     }
 }

@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace ECommerce.DataAccess.Concrete.EntityFramework
 {
-    public class EfCustomerDal : EfEntityRepositoryBase<Customer, ECommerceContext>, ICustomerDal
+    public class EfCreditCardDal : EfEntityRepositoryBase<CreditCard, ECommerceContext>, ICreditCardDal
     {
     }
+
 }
