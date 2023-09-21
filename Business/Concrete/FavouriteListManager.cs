@@ -59,9 +59,9 @@ namespace ECommerce.Business.Concrete
             }
         }
 
-        public IDataResult<Product> GetFavouriteList(int customerId)
+        public IDataResult<List<FavouriteList>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<FavouriteList>>(_favouriteListDal.GetAll());
         }
 
         public IResult RemoveFromFavouriteList(FavouriteList favouriteList)

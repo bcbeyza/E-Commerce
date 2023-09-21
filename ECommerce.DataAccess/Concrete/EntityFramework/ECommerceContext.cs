@@ -18,6 +18,7 @@ namespace ECommerce.DataAccess.Concrete.EntityFramework
         public DbSet<Customer> Customer { get; set; }
         public DbSet<CreditCard> CreditCard { get; set; }
         public DbSet<FavouriteList> FavouriteList { get; set; }
+        public DbSet<Cart> Cart { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

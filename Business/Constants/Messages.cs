@@ -27,5 +27,7 @@ namespace ECommerce.Business.Constants
         public static string CardAdded = "karat eklendi.";
 
         public static string FavoriteProductAdded = "favorilere eklendi.";
+
+        public static string AddToCart = "sepete eklendi.";
     }
 }

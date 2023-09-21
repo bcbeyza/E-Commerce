@@ -13,6 +13,6 @@ namespace ECommerce.Business.Abstract
     {
         IResult AddToFavouriteList(FavouriteList favouriteList);
         IResult RemoveFromFavouriteList(FavouriteList favouriteList);
-        IDataResult<Product> GetFavouriteList(int customerId);
+        IDataResult<List<FavouriteList>> GetAll();
     }
 }
