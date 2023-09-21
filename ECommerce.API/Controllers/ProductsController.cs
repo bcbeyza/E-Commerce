@@ -65,15 +65,6 @@ namespace ECommerce.API.Controllers
             }
             return BadRequest(result);
         }
-        [HttpPost("addproduct")]
-        public IActionResult AddProduct(Product product)
-        {
-            var result = _productService.AddProduct(product);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
+        
     }
 }

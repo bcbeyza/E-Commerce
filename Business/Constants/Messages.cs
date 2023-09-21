@@ -25,5 +25,7 @@ namespace ECommerce.Business.Constants
         public static string CardUpdate = "kart güncellendi.";
         public static string CardDelete = "kart silindi.";
         public static string CardAdded = "karat eklendi.";
+
+        public static string FavoriteProductAdded = "favorilere eklendi.";
     }
 }

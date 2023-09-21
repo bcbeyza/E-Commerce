@@ -16,7 +16,7 @@ namespace ECommerce.Business.Abstract
         IResult RemoveCustomer(Customer customer);
 
         Customer GetByEmail(string email);
-
+        Customer GetById(int id);
         Customer GetByPassword(string password);
 
         IResult Login(CustomerForLoginDto customerForLoginDto);

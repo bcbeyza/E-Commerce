@@ -17,13 +17,20 @@ namespace ECommerce.DataAccess.Concrete.EntityFramework
         public DbSet<Product> Product { get; set; }
         public DbSet<Customer> Customer { get; set; }
         public DbSet<CreditCard> CreditCard { get; set; }
+        public DbSet<FavouriteList> FavouriteList { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<CreditCard>()
                 .HasKey(c => c.CardID);
+            base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<FavouriteList>()
+                .HasKey(c => c.FavouriteID);
+            base.OnModelCreating(modelBuilder);
 
         }
     }

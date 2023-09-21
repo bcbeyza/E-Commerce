@@ -71,6 +71,9 @@ namespace ECommerce.Business.Concrete
 
         }
 
-        
+        public Customer GetById(int id)
+        {
+            return _customerDal.Get(c => c.CustomerID == id);
+        }
     }
 }
