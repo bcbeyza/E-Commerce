@@ -66,7 +66,35 @@ namespace ECommerce.Business.Concrete
 
         public IResult RemoveFromFavouriteList(FavouriteList favouriteList)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // Önce veritabanında ilgili müşteriyi ve ürünü bulun
+                var customer = _customerService.GetById(favouriteList.CustomerID);
+                var product = _productService.GetById(favouriteList.ProductID);
+
+                if (customer == null || product == null)
+                {
+                    return new ErrorResult("Müşteri veya ürün bulunamadı.");
+                }
+
+                // Favori listeye eklemek için gerekli işlemleri yapın (örneğin, veritabanına ekleyin)
+                var favoriteList = new FavouriteList
+                {
+                    ProductID = favouriteList.ProductID,
+                    CustomerID = favouriteList.CustomerID,
+                    FavouriteID = favouriteList.FavouriteID,
+                    // FavouriteListID veya diğer özellikleri doldurabilirsiniz
+                };
+
+                _favouriteListDal.Delete(favoriteList);
+
+                return new SuccessResult("Ürün favorilerden silindi.");
+            }
+            catch (Exception ex)
+            {
+                // Hata durumlarını işleyin ve gerekirse uygun bir hata mesajı dönün
+                return new ErrorResult($"Ürün favorilerden silinirken bir hata oluştu: {ex.Message}");
+            }
         }
     }
 }

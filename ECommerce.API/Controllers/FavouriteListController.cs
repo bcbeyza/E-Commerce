@@ -16,13 +16,28 @@ namespace ECommerce.API.Controllers
             _favouriteListService=favouriteList;
         }
 
-        [HttpPost("AddToFavouriteList")]
+        [HttpPost("AddFavouriteList")]
 
-        public IActionResult AddToFavouriteList(FavouriteList favouriteList)
+        public IActionResult AddFavouriteList(FavouriteList favouriteList)
         {
             try
             {
                 _favouriteListService.AddToFavouriteList(favouriteList);
+                return Ok("Successful");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error occured! : " + ex.Message);
+            }
+
+        }
+        [HttpDelete("RemoveFromFavouriteList")]
+
+        public IActionResult RemoveFromFavouriteList(FavouriteList favouriteList)
+        {
+            try
+            {
+                _favouriteListService.RemoveFromFavouriteList(favouriteList);
                 return Ok("Successful");
             }
             catch (Exception ex)
@@ -36,15 +51,5 @@ namespace ECommerce.API.Controllers
 
 
 
-        //[HttpPost("add")]
-        //public IActionResult AddToFavourites()
-        //{
-        //    var result = _favouriteListService.AddToFavouriteList(request.ProductID,request.CustomerID);
-        //    if (result.Success)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    return BadRequest(result);
-        //}
     }
 }
