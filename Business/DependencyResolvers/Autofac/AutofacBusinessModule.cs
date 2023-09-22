@@ -29,6 +29,9 @@ namespace ECommerce.Business.DependencyResolvers.Autofac
             builder.RegisterType<CartManager>().As<ICartService>().SingleInstance();
             builder.RegisterType<EfCartDal>().As<ICartDal>().SingleInstance();
 
+            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
+            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
+
 
         }
 

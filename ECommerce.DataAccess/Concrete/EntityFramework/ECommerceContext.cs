@@ -19,6 +19,7 @@ namespace ECommerce.DataAccess.Concrete.EntityFramework
         public DbSet<CreditCard> CreditCard { get; set; }
         public DbSet<FavouriteList> FavouriteList { get; set; }
         public DbSet<Cart> Cart { get; set; }
+        public DbSet<Category> Category { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -31,6 +32,10 @@ namespace ECommerce.DataAccess.Concrete.EntityFramework
 
             modelBuilder.Entity<FavouriteList>()
                 .HasKey(c => c.FavouriteID);
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Category>()
+               .HasKey(c => c.CategoryID);
             base.OnModelCreating(modelBuilder);
 
         }
