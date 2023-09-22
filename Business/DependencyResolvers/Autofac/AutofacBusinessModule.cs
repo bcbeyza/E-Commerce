@@ -30,6 +30,12 @@ namespace ECommerce.Business.DependencyResolvers.Autofac
             builder.RegisterType<EfCartDal>().As<ICartDal>().SingleInstance();
 
 
+            builder.RegisterType<BrandManager>().As<IBrandService>().SingleInstance();
+            builder.RegisterType<EfBrandDal>().As<IBrandDal>().SingleInstance();
+
+            builder.RegisterType<ColorManager>().As<IColorService>().SingleInstance();
+            builder.RegisterType<EfColorDal>().As<IColorDal>().SingleInstance();
+
         }
 
 

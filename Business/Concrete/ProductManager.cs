@@ -50,5 +50,15 @@ namespace ECommerce.Business.Concrete
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductID == productId));
 
         }
+
+        public IDataResult<List<Product>> GetAllByBrandId(int id)
+        {
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.BrandID == id));
+        }
+
+        public IDataResult<List<Product>> GetAllByColorId(int id)
+        {
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.ColorID == id));
+        }
     }
 }

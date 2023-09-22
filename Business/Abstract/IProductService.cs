@@ -15,6 +15,8 @@ namespace ECommerce.Business.Abstract
         IResult UpdateProduct(Product product);
         IDataResult<List<Product>> GetAll();
         IDataResult<List<Product>> GetAllByCategoryId(int id);
+        IDataResult<List<Product>> GetAllByBrandId(int id);
+        IDataResult<List<Product>> GetAllByColorId(int id);
         IDataResult<Product> GetById(int productId);
 
     }
