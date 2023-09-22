@@ -11,9 +11,7 @@ namespace ECommerce.Business.Abstract
     public interface ICartService
     {
         IResult AddToCart(Cart cart);
-
         IResult DeleteFromCart(Cart cart);
-
         IResult UpdateCard(Cart cart);
         IDataResult<List<Cart>> GetAll();
         IDataResult<Cart> GetById(int id);
