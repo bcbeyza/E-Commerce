@@ -65,6 +65,26 @@ namespace ECommerce.API.Controllers
             }
             return BadRequest(result);
         }
-        
+        [HttpGet("getbybrandyid")]
+        public IActionResult GetByBrandId(int brandId)
+        {
+            var result = _productService.GetAllByCategoryId(brandId);
+            if (result == null)
+            {
+                return NotFound();
+            }
+            return Ok(result);
+        }
+        [HttpGet("getbycolorid")]
+        public IActionResult GetByColorId(int colorId)
+        {
+            var result = _productService.GetAllByCategoryId(colorId);
+            if (result == null)
+            {
+                return NotFound();
+            }
+            return Ok(result);
+        }
+
     }
 }
